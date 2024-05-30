@@ -1,0 +1,64 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="'navigation'"
+    [mode]="'side'"
+    [opened]="false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">Menu</mat-icon>
+      </button>
+
+      <span>Angular</span>
+    </mat-toolbar>
+
+    <app-carts-form></app-carts-form>
+
+    <h3 class="title3">
+      Clicked cart title is <span>{{ cartTitle }}</span>
+    </h3>
+
+    <div class="cart-container">
+      <ng-container *ngFor="let cart of carts">
+        <app-cart
+          [title]="cart.title"
+          [description]="cart.description"
+          (myTitleChange)="handleClick($event)"
+        ></app-cart>
+      </ng-container>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <app-cart
+title="What is Angular ?"
+(myTitleChange)="handleClick($event)"
+></app-cart>
+<app-cart
+title="Getting started"
+(myTitleChange)="handleClick($event)"
+></app-cart>
+<app-cart
+title="Learn and Explore "
+(myTitleChange)="handleClick($event)"
+></app-cart>
+<app-cart
+title="Setup  environment"
+(myTitleChange)="handleClick($event)"
+></app-cart> -->
