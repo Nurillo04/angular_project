@@ -1,0 +1,16 @@
+<h3 class="title3">
+  Clicked cart title is <span>{{ cartTitle }}</span>
+</h3>
+<h3 class="title3">
+  <span>{{ cartTitle }} </span> being hovered! {{ hoveredCart }}
+</h3>
+
+<div class="cart-container">
+  <ng-container *ngFor="let cart of carts">
+    <app-cart
+      [title]="cart.title"
+      [description]="cart.description"
+      (myTitleChange)="handleClick($event)"
+    ></app-cart>
+  </ng-container>
+</div>

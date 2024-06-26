@@ -1,0 +1,17 @@
+.cart-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.title3 {
+  margin-left: 30px;
+  font-size: 24px;
+  font-style: normal;
+  font-family: sans-serif;
+  margin-top: 30px;
+  span {
+    color: royalblue;
+  }
+}

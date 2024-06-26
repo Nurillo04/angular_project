@@ -1,4 +1,9 @@
-<div class="cart-box" [title]="test" (click)="testFn()">
+<div
+  class="cart-box"
+  [title]="test"
+  (click)="testFn()"
+  [appBackground]="cartTitle"
+>
   <h2 class="cart-title">{{ cartTitle }}</h2>
   <p class="cart-desc">{{ cartDesc }}</p>
   <div class="cart-footer">

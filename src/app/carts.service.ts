@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cart } from './cart/cart';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +28,7 @@ export class CartsService {
     },
   ];
 
+  hoveredCart$ = new BehaviorSubject<string>('Test');
   constructor() {}
 
   addCart(cart: Cart) {
