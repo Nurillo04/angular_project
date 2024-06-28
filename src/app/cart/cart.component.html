@@ -2,11 +2,15 @@
   class="cart-box"
   [title]="test"
   (click)="testFn()"
-  [appBackground]="cartTitle"
+  [appBackground]="cart.title"
+  [routerLink]="['/carts', index]"
 >
-  <h2 class="cart-title">{{ cartTitle }}</h2>
-  <p class="cart-desc">{{ cartDesc }}</p>
+  <h2 class="cart-title">{{ cart.title }}</h2>
+  <p class="cart-desc">{{ cart.description }}</p>
   <div class="cart-footer">
     <p>Platform overview</p>
+    <button mat-raised-button color="primary" (click)="deleteCart(index)">
+      Delete
+    </button>
   </div>
 </div>

@@ -27,11 +27,15 @@ export class CartsService {
         'Set up your  local environment for development with the Angular CLi',
     },
   ];
-
+  carts$ = new BehaviorSubject<Cart[]>(this.carts);
   hoveredCart$ = new BehaviorSubject<string>('Test');
   constructor() {}
 
   addCart(cart: Cart) {
     this.carts.push(cart);
+  }
+  deleteCart(index: number) {
+    this.carts.splice(index, 1);
+    this.carts$.next(this.carts);
   }
 }

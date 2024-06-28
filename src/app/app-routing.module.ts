@@ -5,6 +5,7 @@ import { CartsFormComponent } from './carts-form/carts-form.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CartDisplayComponent } from './cart-display/cart-display.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,14 @@ const routes: Routes = [
   {
     path: 'carts',
     component: CartComponentComponent,
+    children: [
+      {
+        path: ':id',
+        component: CartDisplayComponent,
+      },
+    ],
   },
+
   {
     path: '**',
     component: NotFoundComponent,

@@ -28,6 +28,7 @@ import { IfDirective } from './directives/if.directive';
 import { CartComponentComponent } from './cart-component/cart-component.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CartDisplayComponent } from './cart-display/cart-display.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CartComponentComponent,
     HomeComponent,
     NotFoundComponent,
+    CartDisplayComponent,
   ],
   imports: [
     BrowserModule,

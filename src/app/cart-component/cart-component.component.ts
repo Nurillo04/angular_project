@@ -11,7 +11,6 @@ import { CartsService } from '../carts.service';
 })
 export class CartComponentComponent implements OnChanges {
   private breakpointObserver = inject(BreakpointObserver);
-
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
@@ -22,10 +21,13 @@ export class CartComponentComponent implements OnChanges {
   cartTitle = '';
 
   hoveredCart: string = ' ';
-  carts: Cart[];
+  carts!: Cart[];
 
   constructor(private cartService: CartsService) {
-    this.carts = this.cartService.carts;
+    // this.carts = this.cartService.carts;
+    this.cartService.carts$.subscribe((carts) => {
+      this.carts = carts;
+    });
     this.cartService.hoveredCart$.next('Next');
     this.cartService.hoveredCart$
       .pipe(
