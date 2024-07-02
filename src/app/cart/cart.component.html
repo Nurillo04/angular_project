@@ -4,6 +4,7 @@
   (click)="testFn()"
   [appBackground]="cart.title"
   [routerLink]="['/carts', index]"
+  [queryParams]="{ cartTitle: cart.title }"
 >
   <h2 class="cart-title">{{ cart.title }}</h2>
   <p class="cart-desc">{{ cart.description }}</p>

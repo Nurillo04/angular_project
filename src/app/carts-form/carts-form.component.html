@@ -1,13 +1,18 @@
 <div class="form-container">
-  <form class="form">
+  <form class="form" #form>
     <mat-form-field class="example-full-width">
       <mat-label>Cart Title</mat-label>
-      <input matInput placeholder="Type cart title..." #title />
+      <input matInput placeholder="Type cart title..." #title name="title" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Cart desc</mat-label>
-      <textarea matInput placeholder="Cart description " #desc></textarea>
+      <textarea
+        matInput
+        placeholder="Cart description "
+        #desc
+        name="desc"
+      ></textarea>
     </mat-form-field>
 
     <button
